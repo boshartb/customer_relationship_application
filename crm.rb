@@ -13,7 +13,7 @@ class CRM
     crm = CRM.new(name)
     crm.main_menu
   end
-  
+
   def print_main_menu
     puts "[1] Add a contact"
     puts "[2] Modify a contact"
@@ -57,52 +57,51 @@ class CRM
 
     print "First Name: "
     first_name = gets.chomp
-
     print "Last Name: "
     last_name = gets.chomp
-
     print "Email: "
     email = gets.chomp
-
     print "Note: "
     note = gets.chomp
 
     new_contact = Contact.new(first_name, last_name, email, note)
     @rolodex.add_contact(new_contact)
+    puts "Contact Saved"
   end
 
-	def modify_contact
-		print "Which Contact would you like to edit?"
-		@contact = gets.chomp
-		print "Is  the info you want to modify?"
-		if yes = gets.chomp
-			 puts "Change Made"
-			elsif no = gets.chomp
-						puts "Item unchanged"
-		else  puts 'ANSWER THE DAMN QUESTION'
-					return
-		end 
-	end
-	
+  def modify_contact
+    print "Which Contact would you like to edit?"
+    @contact = gets.chomp
+    print "Is  the info you want to modify?"
+    if yes = gets.chomp
+       puts "Change Made"
+      elsif no = gets.chomp
+            puts "Item unchanged"
+    else  puts 'ANSWER THE DAMN QUESTION'
+          return
+    end 
+  end
+  
 
-	def display_contact
-		print "contact"
-	end
+  def display_contact
+    print "contact"
+  end
 
-	def display_all
-		print "ALL"
-	end
+  def display_all
+    print "ALL"
+  end
 
-	def display_attribute
-		print "attributes"
-	end
+  def display_attribute
+    print "attributes"
+  end
 
-	def delete_contact
-		print "Which contact would you like to detete?"
-		note = gets.chomp
-		puts  "SLAM DUNK!"
-	end
+  def delete_contact
+    print "Which contact would you like to detete?"
+    note = gets.chomp
+    puts  "SLAM DUNK!"
+  end
 end
 
 bitmaker = CRM.new("Bitmaker LABS CRM")
 bitmaker.main_menu
+
