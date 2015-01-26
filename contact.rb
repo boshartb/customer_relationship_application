@@ -7,4 +7,14 @@ class Contact
     @email = email
     @note = note
   end
+
+  def contacts
+    @contacts
+  end
+
+  def add_contact(contact)
+    contact.id = @id
+    @contacts << contact
+    @id += 1
+  end
 end
